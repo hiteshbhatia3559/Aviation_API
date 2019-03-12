@@ -14,8 +14,9 @@ while 1:
     input_variable = input("What is your flight number?")
     if input_variable.lower() != "quit":
         found = "NO"
-        for i in range(0,10):
-            for j in ["B737","B738","B739"]:
+        print("Please wait...")
+        for j in ["B737", "B738", "B739"]:
+            for i in range(0, 10):
                 answer = get_answer(j)
                 for item in answer:
                     # if input_variable in [item['flight']['iataNumber'],item['flight']['icaoNumber'],item['aircraft']['regNumber']]:
