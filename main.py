@@ -9,15 +9,16 @@ def get_answer(flight_number):
     url = "https://aviation-edge.com/get.php"
 
     response = json.loads(requests.get(
-        url=" http://aviation-edge.com/v2/public/flights?key=" + api_key + "&flightIata=" + flight_number).text)
+        url=" http://aviation-edge.com/v2/public/flights?key=" + api_key + "&flightIcao=" + flight_number).text)
 
-    print(response)
+    return response
 
 # Code outputs the type of aircraft
 
 if __name__ == "__main__":
     while 1:
-        flight_number = input("What is your flight number?")
+        # flight_number = input("What is your flight number?")
+        flight_number = "BA2490"
         if flight_number.lower() != "quit":
-            get_answer(flight_number)
+            print(get_answer(flight_number))
         else: exit()
